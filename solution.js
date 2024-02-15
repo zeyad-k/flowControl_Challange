@@ -14,7 +14,7 @@ const submitButton = document.querySelector('#button');
 async function fetchingData(username){
 	let githubResponse = await fetch(`https://api.github.com/users/${username}`);
 	let githubUser = await githubResponse.json();
-	if (githubUser.message === 'Not Found') {
+	if (githubUser.status === 'Not Found') {
 		alert('This username is not found');
 	  } else {
 		  updateData(githubUser);
